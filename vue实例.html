@@ -1,0 +1,53 @@
+<!-- 数据与方法 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+
+
+    <script>
+        // 生命周期钩子函数
+         //也有一些其它的钩子，在实例生命周期的不同阶段被调用，如 mounted、updated 和 destroyed。生命周期钩子的 this 上下文指向调用它的 Vue 实例。
+        var app2 = new Vue({
+            data: {
+                a: 1
+            },
+            created: function () {
+                // `this` 指向 vm 实例
+                console.log('a is: ' + this.a)
+            }
+        })
+
+
+        // 当数据改变时候，视图会渲染已经存在的data property 只有存在的才是响应式的
+        var data = {
+            a: 1
+        }
+
+        var vm = new Vue({
+            data: data
+        })
+
+        // Object.freeze(obj) 可以阻止系统追踪变化
+
+
+        vm.$data === data // => true
+        vm.$el === document.getElementById('example') // => true
+
+        // $watch 是一个实例方法
+        vm.$watch('a', function (newValue, oldValue) {
+            // 这个回调将在 `vm.a` 改变后调用
+        })
+    </script>
+</body>
+
+</html>
