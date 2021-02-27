@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<!-- v-model 双向绑定 
+绑定元素的值会和表单元素的值相关联
+-->
+<div id="app">
+    <input   v-model="message" type="text" />
+</div>
+  
+        <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                message:"asdasd"
+            }
+        })
+        </script>
+
+
+</body>
+</html>
